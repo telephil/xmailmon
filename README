@@ -1,0 +1,13 @@
+xmailmon
+========
+
+DESCRIPTION
+-----------
+Monitors maildir folders for new mails. This is similar in purpose to xbiff but it allows to monitor multiple mailboxes and display new mail count.
+
+INSTALL
+-------
+- Modify config.def.h to configure maildir path along with mailboxes to watch
+- Build using make
+- Copy xmailmon executable somewhere in your $PATH
+
