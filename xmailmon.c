@@ -103,7 +103,7 @@ checkmail(void *data)
 		}
 		if(n)
 			wupdate();
-		sleep(10);
+		sleep(Cinterval);
 	}
 	return NULL;
 }
