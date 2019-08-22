@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Werror $(shell pkg-config --cflags x11 xft)
+CFLAGS=-Wall -Wextra -Werror $(shell pkg-config --cflags x11 xft)
 LDFLAGS=-lpthread $(shell pkg-config --libs x11 xft)
 
 OBJS=xmailmon.o utils.o

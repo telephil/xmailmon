@@ -45,7 +45,7 @@ static XftColor 	color;
 static int 			lineheight;
 
 int
-main(int argc, char *argv[])
+main(void)
 {
 	mkconfig();
 	winit();
