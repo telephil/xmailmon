@@ -1,3 +1,12 @@
+prefix = /usr/local
+exec_prefix = $(prefix)
+bindir = $(exec_prefix)/bin
+
+INSTALL = install
+INSTALL_PROGRAM = $(INSTALL)
+MKDIR = $(INSTALL) -d
+RM = rm -f
+
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror $(shell pkg-config --cflags x11 xft)
 LDFLAGS=-lpthread $(shell pkg-config --libs x11 xft)
@@ -19,8 +28,15 @@ $(TARG):	$(OBJS)
 	$(CC) $< -o $@ -c $(CFLAGS)
 
 clean:
-	@rm -f $(TARG)
-	@rm -f *.o
+	-$(RM) $(TARG)
+	-$(RM) *.o
 
-.phony:	all clean
+install:	all
+	$(MKDIR) $(bindir)
+	$(INSTALL_PROGRAM) $(TARG) $(bindir)/
+
+uninstall:
+	-$(RM) $(bindir)/$(TARG)
+
+.PHONY:	all clean install uninstall
 
