@@ -20,29 +20,29 @@ struct Mailbox
 	int   count;
 };
 
+static Mailbox** mailboxes;
+static int       mailboxcount;
+static pthread_t thread;
+static Display   *dpy;
+static int       screen;
+static Visual    *visual;
+static Colormap  cmap;
+static Window    win;
+static GC        gc;
+static Pixmap    pixmap;
+static XftFont   *font;
+static XftFont   *font2;
+static XftDraw   *draw;
+static XftColor  color;
+static int       lineheight;
+
 static void  mkconfig(void);
 static void* checkmail(void*);
-static void	 winit(void);
+static void  winit(void);
 static void  wend(void);
 static void  wrun(void);
 static void  wupdate(void);
 static void  wdraw(void);
-
-static Mailbox**	mailboxes;
-static int			mailboxcount;
-static pthread_t	thread;
-static Display		*dpy;
-static int			screen;
-static Visual		*visual;
-static Colormap 	cmap;
-static Window		win;
-static GC			gc;
-static Pixmap		pixmap;
-static XftFont		*font;
-static XftFont		*font2;
-static XftDraw		*draw;
-static XftColor 	color;
-static int 			lineheight;
 
 int
 main(void)
