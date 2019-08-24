@@ -1,7 +1,7 @@
 /* path to maildirs */
 const char* Cmaildir = "~/Mail";
 /* name of mailboxes to watch for new mails */
-const char* Cmailboxes[] = { "inbox", NULL };
+const char* Cmailboxes[] = { "inbox" };
 /* interval in seconds between checks for new mail */
 const int	Cinterval = 10;
 /* font used when maildir does not contain new mail */

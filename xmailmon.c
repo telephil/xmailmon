@@ -64,9 +64,7 @@ mkconfig(void)
 	int i, l;
 
 	m = expandpath(Cmaildir);
-	mailboxcount = 0;
-	for(i = 0; Cmailboxes[i] != NULL; i++)
-		++mailboxcount;
+	mailboxcount = sizeof(Cmailboxes) / sizeof(Cmailboxes[0]);
 	mailboxes = calloc(mailboxcount, sizeof(Mailbox));
 	if(mailboxes == NULL)
 		die("cannot allocate memory");
